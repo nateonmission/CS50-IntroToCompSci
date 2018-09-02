@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Buy!
+{% endblock %}
+
+{% block main %}
+    <H1>You have successfully purchased:</H1>
+<TABLE>
+    <TR>
+        <TD>Quantity:</TD>
+        <TD>{{ transList1[3] }}</TD>
+    </TR>
+    <TR>
+        <TD>Symbol:</TD>
+        <TD>{{ transList1[2] }}</TD>
+    </TR>
+    <TR>
+        <TD>Price per Share:</TD>
+        <TD>{{ transList1[4] }}</TD>
+    </TR>
+    <TR>
+        <TD>Total Paid:</TD>
+        <TD>{{ transList1[5] }}</TD>
+    </TR>
+    <TR>
+        <TD>Remaining Balance:</TD>
+        <TD>{{ transList1[6] }}</TD>
+    </TR>
+</TABLE>
+{% endblock %}
+

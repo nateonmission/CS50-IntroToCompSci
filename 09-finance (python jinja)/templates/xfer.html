@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Transfer
+{% endblock %}
+
+{% block main %}
+    <form action="/xfer" method="post">
+
+        <div class="form-group">
+            <input autofocus class="form-control" name="routing" placeholder="Bank Routing Number" type="text"/>
+            <input class="form-control" name="account" placeholder="Bank Account Number" type="text"/>
+            <select name="direction">
+                <option value="Xfer-IN">IN</option>
+                <option value="Xfer-OUT">OUT</option>
+            </select>
+            <input class="form-control" name="amount" placeholder="100.00" type="float"/>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Transfer!</button>
+    </form>
+{% endblock %}

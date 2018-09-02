@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Transaction History
+{% endblock %}
+
+{% block main %}
+
+    <H1 class="navbar-brand"><span class="blue">Transaction History for Customer</span> {{ user[0].username }} ({{ user[0].id }}):</H1>
+<BR>
+<TABLE class="historyTable" border="1">
+    <TR>
+        <TD>Trans. ID</TD>
+        <TD>Date/Time</TD>
+        <TD>Symbol</TD>
+        <TD>Trans. Type</TD>
+        <TD>Quatity</TD>
+        <TD>Unit Price</TD>
+        <TD>Trans. Total</TD>
+    </TR>
+    {% for transaction in range(0, transactions|length) %}
+        <TR>
+            <TD> {{ transactions[transaction].trans_key }} </TD>
+            <TD> {{ transactions[transaction].trans_date }} </TD>
+            <TD> {{ transactions[transaction].symbol }} </TD>
+            <TD> {{ transactions[transaction].trans_type }} </TD>
+            <TD> {{ transactions[transaction].quantity }} </TD>
+            <TD> $ {{ transactions[transaction].price }} </TD>
+            <TD> $ {{ transactions[transaction].price * transactions[transaction].quantity  }} </TD>
+        </TR>
+    {% endfor %}
+
+</TABLE>
+
+{% endblock %}
+
